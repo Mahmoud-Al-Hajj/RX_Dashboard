@@ -81,25 +81,30 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# API Configuration
-API_BASE_URL = "http://localhost:8000"
+# API Configuration - Use environment variable or default to localhost
+import os
+API_BASE_URL = os.getenv("API_BASE_URL", "http://api:8000")
 
 def check_api_connection():
     """Check if the API is running"""
     try:
-        response = requests.get(f"{API_BASE_URL}/health", timeout=5)
+        response = requests.get(f"{API_BASE_URL}/health", timeout=10)
         return response.status_code == 200
-    except:
+    except Exception as e:
+        st.warning(f"API connection warning: {e}")
         return False
 
 def get_jobs(limit: int = 100):
     """Fetch jobs from API"""
     try:
-        response = requests.get(f"{API_BASE_URL}/jobs?limit={limit}")
+        response = requests.get(f"{API_BASE_URL}/jobs?limit={limit}", timeout=10)
         if response.status_code == 200:
             return response.json()
-        return []
-    except:
+        else:
+            st.warning(f"API returned status {response.status_code}")
+            return []
+    except Exception as e:
+        st.warning(f"Failed to fetch jobs: {e}")
         return []
 
 def get_statistics():
@@ -190,7 +195,13 @@ def main():
     # Check API connection
     if not check_api_connection():
         st.error("❌ Cannot connect to the API server. Please make sure the server is running.")
-        st.info("💡 Start the API server with: `python -m src.api.main`")
+        st.info("💡 In Docker: Check if the API container is running")
+        st.info("💡 API URL: " + API_BASE_URL)
+        st.info("💡 Try refreshing the page in a few seconds...")
+        
+        # Show retry button
+        if st.button("🔄 Retry Connection"):
+            st.rerun()
         return
     
     st.success("✅ Connected to RemotelyX Job Automation API")

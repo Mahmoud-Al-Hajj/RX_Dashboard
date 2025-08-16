@@ -41,7 +41,7 @@ def setup_logging():
     )
 
 
-async def run_api_server():
+def run_api_server():
     """Run the FastAPI server."""
     import uvicorn
     from src.api.main import app
@@ -52,6 +52,7 @@ async def run_api_server():
     logger.info(f"Server will be available at: http://{settings.host}:{settings.port}")
     logger.info(f"API documentation at: http://{settings.host}:{settings.port}/docs")
     
+    # Always use uvicorn.run for simplicity and compatibility
     uvicorn.run(
         app,
         host=settings.host,
@@ -249,40 +250,18 @@ Examples:
     
     try:
         if args.command == "api":
-            # Check if we're already in an event loop
-            try:
-                loop = asyncio.get_running_loop()
-                # If we're in a loop, just run the coroutine
-                loop.run_until_complete(run_api_server())
-            except RuntimeError:
-                # No loop running, create one
-                asyncio.run(run_api_server())
+            # For API, just run directly since uvicorn handles the event loop
+            run_api_server()
         elif args.command == "dashboard":
             run_dashboard()
         elif args.command == "workflow":
-            try:
-                loop = asyncio.get_running_loop()
-                loop.run_until_complete(run_workflow(args.urls))
-            except RuntimeError:
-                asyncio.run(run_workflow(args.urls))
+            asyncio.run(run_workflow(args.urls))
         elif args.command == "enrich":
-            try:
-                loop = asyncio.get_running_loop()
-                loop.run_until_complete(run_enrichment(args.limit))
-            except RuntimeError:
-                asyncio.run(run_enrichment(args.limit))
+            asyncio.run(run_enrichment(args.limit))
         elif args.command == "export":
-            try:
-                loop = asyncio.get_running_loop()
-                loop.run_until_complete(run_export())
-            except RuntimeError:
-                asyncio.run(run_export())
+            asyncio.run(run_export())
         elif args.command == "stats":
-            try:
-                loop = asyncio.get_running_loop()
-                loop.run_until_complete(run_statistics())
-            except RuntimeError:
-                asyncio.run(run_statistics())
+            asyncio.run(run_statistics())
         else:
             logger.error(f"Unknown command: {args.command}")
             parser.print_help()

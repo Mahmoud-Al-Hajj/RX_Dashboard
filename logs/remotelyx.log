@@ -287,3 +287,190 @@
 2025-08-16 11:34:58 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
 2025-08-16 11:34:58 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
 2025-08-16 11:34:58 | ERROR    | __main__:main:270 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:35:21 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:35:21 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:35:21 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:35:23 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:35:23 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:35:23 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:35:23 | ERROR    | __main__:main:270 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:35:32 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:35:32 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:35:32 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:35:34 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:35:34 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:35:34 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:35:34 | ERROR    | __main__:main:270 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:35:41 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:35:41 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:35:41 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:35:42 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:35:42 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:35:42 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:35:42 | ERROR    | __main__:main:270 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:37:28 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:37:28 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:37:28 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:37:28 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:37:28 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:37:28 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:37:28 | INFO     | __main__:run_dashboard:71 - Starting RemotelyX Job Intel Dashboard
+2025-08-16 11:37:28 | INFO     | __main__:run_dashboard:72 - Dashboard will be available at: http://localhost:8501
+2025-08-16 11:37:29 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:37:29 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:37:29 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:37:29 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:37:34 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:37:34 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:37:34 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:37:35 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:37:35 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:37:35 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:37:35 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:37:39 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:37:39 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:37:39 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:37:40 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:37:40 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:37:40 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:37:40 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:37:45 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:37:45 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:37:45 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:37:46 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:37:46 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:37:46 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:37:46 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:37:51 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:37:51 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:37:51 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:37:53 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:37:53 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:37:53 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:37:53 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:38:00 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:38:00 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:38:00 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:38:02 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:38:02 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:38:02 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:38:02 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:38:09 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:38:09 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:38:09 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:38:10 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:38:10 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:38:10 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:38:10 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:38:21 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:38:21 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:38:21 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:38:22 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:38:22 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:38:22 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:38:22 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:38:40 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:38:40 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:38:40 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:38:41 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:38:41 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:38:41 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:38:41 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:39:19 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:39:19 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:39:19 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:39:22 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:39:22 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:39:22 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:39:22 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:39:30 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:39:30 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:39:30 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:39:32 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:39:32 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:39:32 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:39:32 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:39:40 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:39:40 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:39:40 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:39:41 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:39:41 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:39:41 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:39:41 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:39:47 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:39:47 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:39:47 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:39:49 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:39:49 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:39:49 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:39:49 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:39:54 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:39:54 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:39:54 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:39:55 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:39:55 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:39:55 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:39:55 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:40:01 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:40:01 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:40:01 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:40:02 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:40:02 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:40:02 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:40:02 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:40:09 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:40:09 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:40:09 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:40:10 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:40:10 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:40:10 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:40:10 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:40:21 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:40:21 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:40:21 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:40:23 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:40:23 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:40:23 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:40:23 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:40:41 | INFO     | __main__:main:246 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:40:41 | INFO     | __main__:main:247 - Version: 1.0.0
+2025-08-16 11:40:41 | INFO     | __main__:main:248 - Debug Mode: False
+2025-08-16 11:40:43 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:40:43 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:40:43 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:40:43 | ERROR    | __main__:main:293 - Application error: asyncio.run() cannot be called from a running event loop
+2025-08-16 11:42:50 | INFO     | __main__:main:261 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:42:50 | INFO     | __main__:main:262 - Version: 1.0.0
+2025-08-16 11:42:50 | INFO     | __main__:main:263 - Debug Mode: False
+2025-08-16 11:42:51 | INFO     | __main__:main:261 - 🚀 RemotelyX Job Automation Service
+2025-08-16 11:42:51 | INFO     | __main__:main:262 - Version: 1.0.0
+2025-08-16 11:42:51 | INFO     | __main__:main:263 - Debug Mode: False
+2025-08-16 11:42:51 | INFO     | __main__:run_dashboard:86 - Starting RemotelyX Job Intel Dashboard
+2025-08-16 11:42:51 | INFO     | __main__:run_dashboard:87 - Dashboard will be available at: http://localhost:8501
+2025-08-16 11:42:51 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 11:42:51 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 11:42:51 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 11:42:51 | INFO     | src.core.database:connect:32 - Connecting to MongoDB at mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
+2025-08-16 11:42:51 | INFO     | src.core.database:_create_indexes:84 - Database indexes created successfully
+2025-08-16 11:42:51 | SUCCESS  | src.core.database:connect:51 - Successfully connected to MongoDB
+2025-08-16 11:42:51 | SUCCESS  | src.services.job_processor:initialize:35 - Job processor initialized successfully
+2025-08-16 11:42:51 | SUCCESS  | src.api.main:startup_event:60 - RemotelyX Job Automation API started successfully
+2025-08-16 11:43:23 | ERROR    | src.api.main:global_exception_handler:386 - Unhandled exception: Unable to serialize unknown type: <class 'method'>
+2025-08-16 12:02:21 | INFO     | src.core.database:disconnect:66 - Disconnected from MongoDB
+2025-08-16 12:02:21 | INFO     | src.services.job_processor:cleanup:301 - Job processor cleanup completed
+2025-08-16 12:02:21 | INFO     | src.api.main:shutdown_event:72 - RemotelyX Job Automation API shutdown completed
+2025-08-16 12:06:01 | INFO     | __main__:main:247 - 🚀 RemotelyX Job Automation Service
+2025-08-16 12:06:01 | INFO     | __main__:main:248 - Version: 1.0.0
+2025-08-16 12:06:01 | INFO     | __main__:main:249 - Debug Mode: False
+2025-08-16 12:06:02 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 12:06:02 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 12:06:02 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 12:06:02 | INFO     | src.core.database:connect:32 - Connecting to MongoDB at mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
+2025-08-16 12:06:02 | INFO     | src.core.database:_create_indexes:84 - Database indexes created successfully
+2025-08-16 12:06:02 | SUCCESS  | src.core.database:connect:51 - Successfully connected to MongoDB
+2025-08-16 12:06:02 | SUCCESS  | src.services.job_processor:initialize:35 - Job processor initialized successfully
+2025-08-16 12:06:02 | SUCCESS  | src.api.main:startup_event:60 - RemotelyX Job Automation API started successfully
+2025-08-16 12:13:43 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given
+2025-08-16 12:14:01 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given
+2025-08-16 12:14:02 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given
+2025-08-16 12:14:05 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given

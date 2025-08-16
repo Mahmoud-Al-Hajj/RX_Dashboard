@@ -43,7 +43,7 @@ RUN echo '#!/bin/bash' > /app/start.sh && \
     echo 'if [ "$1" = "api" ]; then' >> /app/start.sh && \
     echo '    exec python main.py api' >> /app/start.sh && \
     echo 'elif [ "$1" = "dashboard" ]; then' >> /app/start.sh && \
-    echo '    exec python main.py dashboard' >> /app/start.sh && \
+    echo '    exec streamlit run src/dashboard/main.py --server.port 8501 --server.address 0.0.0.0' >> /app/start.sh && \
     echo 'else' >> /app/start.sh && \
     echo '    echo "Usage: docker run remotelyx-dashboard [api|dashboard]"' >> /app/start.sh && \
     echo '    exit 1' >> /app/start.sh && \

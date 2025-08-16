@@ -53,6 +53,7 @@ services:
       - MONGODB_URI=mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
       - MONGODB_DATABASE=remotelyx_jobs
       - MONGODB_COLLECTION=job_postings
+      - API_BASE_URL=http://api:8000
       - DEBUG=false
       - LOG_LEVEL=INFO
     depends_on:
