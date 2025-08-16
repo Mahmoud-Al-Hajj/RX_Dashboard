@@ -249,17 +249,40 @@ Examples:
     
     try:
         if args.command == "api":
-            asyncio.run(run_api_server())
+            # Check if we're already in an event loop
+            try:
+                loop = asyncio.get_running_loop()
+                # If we're in a loop, just run the coroutine
+                loop.run_until_complete(run_api_server())
+            except RuntimeError:
+                # No loop running, create one
+                asyncio.run(run_api_server())
         elif args.command == "dashboard":
             run_dashboard()
         elif args.command == "workflow":
-            asyncio.run(run_workflow(args.urls))
+            try:
+                loop = asyncio.get_running_loop()
+                loop.run_until_complete(run_workflow(args.urls))
+            except RuntimeError:
+                asyncio.run(run_workflow(args.urls))
         elif args.command == "enrich":
-            asyncio.run(run_enrichment(args.limit))
+            try:
+                loop = asyncio.get_running_loop()
+                loop.run_until_complete(run_enrichment(args.limit))
+            except RuntimeError:
+                asyncio.run(run_enrichment(args.limit))
         elif args.command == "export":
-            asyncio.run(run_export())
+            try:
+                loop = asyncio.get_running_loop()
+                loop.run_until_complete(run_export())
+            except RuntimeError:
+                asyncio.run(run_export())
         elif args.command == "stats":
-            asyncio.run(run_statistics())
+            try:
+                loop = asyncio.get_running_loop()
+                loop.run_until_complete(run_statistics())
+            except RuntimeError:
+                asyncio.run(run_statistics())
         else:
             logger.error(f"Unknown command: {args.command}")
             parser.print_help()
