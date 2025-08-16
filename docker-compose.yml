@@ -1,0 +1,74 @@
+version: "3.8"
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:6.0
+    container_name: remotelyx-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: remotelyx_jobs
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - remotelyx-network
+
+  # RemotelyX API Server
+  api:
+    build: .
+    container_name: remotelyx-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
+      - MONGODB_DATABASE=remotelyx_jobs
+      - MONGODB_COLLECTION=job_postings
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+      - HOST=0.0.0.0
+      - PORT=8000
+    depends_on:
+      - mongodb
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - remotelyx-network
+    command: ["/app/start.sh", "api"]
+
+  # RemotelyX Dashboard
+  dashboard:
+    build: .
+    container_name: remotelyx-dashboard
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    environment:
+      - MONGODB_URI=mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
+      - MONGODB_DATABASE=remotelyx_jobs
+      - MONGODB_COLLECTION=job_postings
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+    depends_on:
+      - mongodb
+      - api
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - remotelyx-network
+    command: ["/app/start.sh", "dashboard"]
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  remotelyx-network:
+    driver: bridge
