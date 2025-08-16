@@ -474,3 +474,23 @@
 2025-08-16 12:14:01 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given
 2025-08-16 12:14:02 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given
 2025-08-16 12:14:05 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given
+2025-08-16 19:41:12 | INFO     | __main__:main:247 - 🚀 RemotelyX Job Automation Service
+2025-08-16 19:41:12 | INFO     | __main__:main:248 - Version: 1.0.0
+2025-08-16 19:41:12 | INFO     | __main__:main:249 - Debug Mode: False
+2025-08-16 19:41:14 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-16 19:41:14 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-16 19:41:14 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-16 19:41:14 | INFO     | src.core.database:connect:32 - Connecting to MongoDB at mongodb://localhost:27017
+2025-08-16 19:41:14 | INFO     | src.core.database:_create_indexes:84 - Database indexes created successfully
+2025-08-16 19:41:14 | SUCCESS  | src.core.database:connect:51 - Successfully connected to MongoDB
+2025-08-16 19:41:14 | SUCCESS  | src.services.job_processor:initialize:35 - Job processor initialized successfully
+2025-08-16 19:41:14 | SUCCESS  | src.api.main:startup_event:60 - RemotelyX Job Automation API started successfully
+2025-08-16 19:41:54 | INFO     | __main__:main:247 - 🚀 RemotelyX Job Automation Service
+2025-08-16 19:41:54 | INFO     | __main__:main:248 - Version: 1.0.0
+2025-08-16 19:41:54 | INFO     | __main__:main:249 - Debug Mode: False
+2025-08-16 19:41:54 | INFO     | __main__:run_dashboard:72 - Starting RemotelyX Job Intel Dashboard
+2025-08-16 19:41:54 | INFO     | __main__:run_dashboard:73 - Dashboard will be available at: http://localhost:8501
+2025-08-16 19:42:02 | ERROR    | __main__:run_dashboard:84 - Failed to start dashboard: Command '['C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\python.exe', '-m', 'streamlit', 'run', 'C:\\Users\\user\\Desktop\\RemotelyX Dashboard\\src\\dashboard\\main.py', '--server.port', '8501', '--server.address', 'localhost']' returned non-zero exit status 1.
+2025-08-16 16:42:09 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given
+2025-08-16 16:59:52 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given
+2025-08-16 17:32:01 | ERROR    | src.core.database:get_jobs:166 - Failed to get jobs: PyObjectId.validate() takes 2 positional arguments but 3 were given
