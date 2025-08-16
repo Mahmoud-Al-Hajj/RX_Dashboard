@@ -1,0 +1,99 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:6.0
+    container_name: remotelyx-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+      MONGO_INITDB_DATABASE: remotelyx_jobs
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - remotelyx-network
+
+  # RemotelyX Job Automation Service
+  remotelyx-service:
+    build: .
+    container_name: remotelyx-service
+    restart: unless-stopped
+    environment:
+      # Gmail Configuration (set these in .env file)
+      - GMAIL_EMAIL=${GMAIL_EMAIL}
+      - GMAIL_PASSWORD=${GMAIL_PASSWORD}
+      - SENDER_EMAIL=${SENDER_EMAIL}
+      - SUBJECT_KEYWORD=${SUBJECT_KEYWORD:-RemotelyX}
+      
+      # MongoDB Configuration
+      - MONGODB_URI=mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
+      - MONGODB_DATABASE=remotelyx_jobs
+      - MONGODB_COLLECTION=job_postings
+      
+      # File Paths
+      - EXCEL_FILE_PATH=/app/data/remotelyx_jobs.xlsx
+      
+      # API Configuration
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      
+      # Logging
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - LOG_FILE=/app/logs/remotelyx.log
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      - mongodb
+    networks:
+      - remotelyx-network
+    command: ["python", "main.py", "api"]
+
+  # Scheduler Service (optional)
+  remotelyx-scheduler:
+    build: .
+    container_name: remotelyx-scheduler
+    restart: unless-stopped
+    environment:
+      # Gmail Configuration (set these in .env file)
+      - GMAIL_EMAIL=${GMAIL_EMAIL}
+      - GMAIL_PASSWORD=${GMAIL_PASSWORD}
+      - SENDER_EMAIL=${SENDER_EMAIL}
+      - SUBJECT_KEYWORD=${SUBJECT_KEYWORD:-RemotelyX}
+      
+      # MongoDB Configuration
+      - MONGODB_URI=mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
+      - MONGODB_DATABASE=remotelyx_jobs
+      - MONGODB_COLLECTION=job_postings
+      
+      # File Paths
+      - EXCEL_FILE_PATH=/app/data/remotelyx_jobs.xlsx
+      
+      # Logging
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - LOG_FILE=/app/logs/remotelyx-scheduler.log
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      - mongodb
+    networks:
+      - remotelyx-network
+    command: ["python", "main.py", "scheduler", "--interval", "30", "--email-limit", "10"]
+    profiles:
+      - scheduler
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  remotelyx-network:
+    driver: bridge 
