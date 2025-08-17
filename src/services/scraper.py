@@ -106,51 +106,36 @@ class RemotelyXScraper:
         return None
     
     def _extract_job_data(self, soup: BeautifulSoup, url: str) -> Optional[JobPostingCreate]:
-        """Extract job data from BeautifulSoup object."""
+        """Extract job data from BeautifulSoup object with simplified fields."""
         try:
             # Extract basic information
             title = self._extract_title(soup)
-            company = self._extract_company(soup)
-            location = self._extract_location(soup)
             description = self._extract_description(soup)
             
-            if not all([title, company, location, description]):
-                logger.warning("Missing required fields")
+            if not all([title, description]):
+                logger.warning("Missing required fields: title or description")
                 return None
             
             # Extract additional information
             skills = self._extract_skills(soup)
-            tags = self._extract_tags(soup)
-            salary_info = self._extract_salary(soup)
-            posting_date = self._extract_posting_date(soup)
-            job_id = self._extract_job_id(soup, url)
             
             # Infer classifications
-            seniority_level = self._infer_seniority(title, description)
+            seniority = self._infer_seniority(title, description)
             work_mode = self._infer_work_mode(title, description)
-            employment_type = self._infer_employment_type(title, description)
             
-            # Parse salary
-            salary_min, salary_max, currency, period = self._parse_salary(salary_info)
+            # Extract salary
+            salary_info = self._extract_salary(soup)
+            salary_min, salary_max, _, _ = self._parse_salary(salary_info)
             
             return JobPostingCreate(
                 title=title,
-                company=company,
-                location=location,
                 job_url=url,
-                job_id=job_id,
                 description=description,
                 skills=skills,
-                tags=tags,
-                salary_min=salary_min,
-                salary_max=salary_max,
-                salary_currency=currency,
-                salary_period=period,
-                seniority_level=seniority_level,
+                seniority=seniority,
                 work_mode=work_mode,
-                employment_type=employment_type,
-                posting_date=posting_date,
-                scraped_at=datetime.utcnow()
+                salary_min=salary_min,
+                salary_max=salary_max
             )
             
         except Exception as e:

@@ -39,24 +39,24 @@ Export to Excel
 
 ### 1. Clone and Setup
 
-```bash
+   ```bash
 git clone <your-repo-url>
 cd RX-Dashboard
-```
+   ```
 
 ### 2. Install Dependencies
 
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ### 3. Environment Configuration
 
-```bash
+   ```bash
 # Copy environment template
 copy env.example .env
 
-# Edit .env with your settings
+   # Edit .env with your settings
 # MongoDB connection, API keys, etc.
 ```
 
@@ -72,13 +72,13 @@ sudo systemctl start mongod
 
 ### 5. Test the System
 
-```bash
+   ```bash
 # Run system tests
 python test_system.py
-
+   
 # Or use the Windows batch file
 start.bat
-```
+   ```
 
 ## 🎯 Usage
 
@@ -121,15 +121,15 @@ python main.py stats
 
 ### Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `MONGODB_URI` | MongoDB connection string | `mongodb://localhost:27017` |
-| `MONGODB_DATABASE` | Database name | `RX_jobs` |
-| `MONGODB_COLLECTION` | Collection name | `job_postings` |
-| `EXCEL_FILE_PATH` | Excel export path | `data/job_postings.xlsx` |
-| `LOG_LEVEL` | Logging level | `INFO` |
-| `HOST` | API server host | `0.0.0.0` |
-| `PORT` | API server port | `8000` |
+| Variable             | Description               | Default                     |
+| -------------------- | ------------------------- | --------------------------- |
+| `MONGODB_URI`        | MongoDB connection string | `mongodb://localhost:27017` |
+| `MONGODB_DATABASE`   | Database name             | `RX_jobs`                   |
+| `MONGODB_COLLECTION` | Collection name           | `job_postings`              |
+| `EXCEL_FILE_PATH`    | Excel export path         | `data/job_postings.xlsx`    |
+| `LOG_LEVEL`          | Logging level             | `INFO`                      |
+| `HOST`               | API server host           | `0.0.0.0`                   |
+| `PORT`               | API server port           | `8000`                      |
 
 ### MongoDB Setup
 
@@ -195,8 +195,8 @@ const urlRegex = /https?:\/\/[^\s]+/g;
 const urls = emailBody.match(urlRegex);
 
 // Filter for RX URLs
-const RXUrls = urls.filter(url => 
-  url.includes('RX.com') || url.includes('RX')
+const RXUrls = urls.filter(
+  (url) => url.includes("RX.com") || url.includes("RX")
 );
 
 return { urls: RXUrls };
@@ -292,15 +292,18 @@ RX-Dashboard/
 ### Common Issues
 
 1. **MongoDB Connection Failed**
+
    - Ensure MongoDB is running
    - Check connection string in `.env`
    - Verify network connectivity
 
 2. **Import Errors**
+
    - Install dependencies: `pip install -r requirements.txt`
    - Check Python version (3.8+ required)
 
 3. **Dashboard Not Loading**
+
    - Check if API server is running
    - Verify ports (8000 for API, 8501 for dashboard)
    - Check browser console for errors
@@ -316,4 +319,4 @@ RX-Dashboard/
 - API logs: Check console output
 - Dashboard logs: Check Streamlit output
 
-**Built with ❤️ for the RX community** 
+**Built with ❤️ for the RX community**

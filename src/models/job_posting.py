@@ -55,45 +55,32 @@ class PyObjectId(ObjectId):
 
 
 class JobPostingBase(BaseModel):
-    """Base model for job posting data according to hackathon requirements."""
+    """Base model for job posting data with simplified fields."""
     
     # Core Information
     title: str = Field(..., description="Job title")
-    company: str = Field(..., description="Company/team name")
-    location: str = Field(..., description="Job location")
     job_url: str = Field(..., description="URL to the job posting")
-    job_id: Optional[str] = Field(None, description="Unique job identifier")
+    description: str = Field(..., description="Job description")
     
-    # Employment Details
-    employment_type: Optional[EmploymentType] = Field(None, description="Employment type")
-    seniority_level: Optional[SeniorityLevel] = Field(None, description="Seniority level")
-    work_mode: Optional[WorkMode] = Field(None, description="Work mode")
+    # Skills & Requirements
+    skills: List[str] = Field(default_factory=list, description="Required skills/technologies")
+    
+    # Job Details
+    seniority: Optional[str] = Field(None, description="Seniority level")
+    work_mode: Optional[str] = Field(None, description="Work mode")
     
     # Compensation
     salary_min: Optional[float] = Field(None, description="Minimum salary")
     salary_max: Optional[float] = Field(None, description="Maximum salary")
-    salary_currency: Optional[str] = Field(default="USD", description="Salary currency")
-    salary_period: Optional[str] = Field(default="year", description="Salary period (year/month/hour)")
     
-    # Skills & Requirements
-    skills: List[str] = Field(default_factory=list, description="Required skills/technologies")
-    tags: List[str] = Field(default_factory=list, description="Job tags/categories")
-    
-    # Content
-    description: str = Field(..., description="Job description")
-    
-    # Metadata
-    posting_date: Optional[datetime] = Field(None, description="Job posting date")
-    scraped_at: datetime = Field(default_factory=datetime.utcnow, description="Scraping timestamp")
-    
-    @validator('skills', 'tags')
-    def validate_lists(cls, v):
-        """Validate and clean lists."""
+    @validator('skills')
+    def validate_skills(cls, v):
+        """Validate and clean skills list."""
         if v is None:
             return []
         return [item.strip() for item in v if item.strip()]
     
-    @validator('title', 'company', 'location')
+    @validator('title', 'job_url', 'description')
     def validate_required_fields(cls, v):
         """Validate required fields are not empty."""
         if not v or not v.strip():
