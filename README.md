@@ -1,10 +1,10 @@
-# 🚀 RemotelyX Job Automation Dashboard
+# 🚀 RX Job Automation Dashboard
 
-A complete workflow and dashboard system for extracting, storing, and presenting skills needed for jobs in the US. The system automatically processes job descriptions from RemotelyX emails and provides comprehensive analytics.
+A complete workflow and dashboard system for extracting, storing, and presenting skills needed for jobs in the US. The system automatically processes job descriptions from RX emails and provides comprehensive analytics.
 
 ## ✨ Features
 
-- **🔍 Intelligent Web Scraping**: Automatically extracts job details from RemotelyX job pages
+- **🔍 Intelligent Web Scraping**: Automatically extracts job details from RX job pages
 - **🗄️ MongoDB Storage**: Non-relational database for flexible job data storage
 - **📊 Interactive Dashboard**: Beautiful Streamlit dashboard with real-time analytics
 - **📈 Excel Export**: Export job data to Excel with backup functionality
@@ -41,7 +41,7 @@ Export to Excel
 
 ```bash
 git clone <your-repo-url>
-cd RemotelyX-Dashboard
+cd RX-Dashboard
 ```
 
 ### 2. Install Dependencies
@@ -102,7 +102,7 @@ Dashboard will be available at: http://localhost:8501
 ### Run Workflow Manually
 
 ```bash
-python main.py workflow --urls "https://remotelyx.com/job/123" "https://remotelyx.com/job/456"
+python main.py workflow --urls "https://RX.com/job/123" "https://RX.com/job/456"
 ```
 
 ### Export to Excel
@@ -124,7 +124,7 @@ python main.py stats
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `MONGODB_URI` | MongoDB connection string | `mongodb://localhost:27017` |
-| `MONGODB_DATABASE` | Database name | `remotelyx_jobs` |
+| `MONGODB_DATABASE` | Database name | `RX_jobs` |
 | `MONGODB_COLLECTION` | Collection name | `job_postings` |
 | `EXCEL_FILE_PATH` | Excel export path | `data/job_postings.xlsx` |
 | `LOG_LEVEL` | Logging level | `INFO` |
@@ -180,7 +180,7 @@ python main.py stats
 
 ### Workflow Setup
 
-1. **Gmail Trigger**: Monitor for emails with "RemotelyX" in subject
+1. **Gmail Trigger**: Monitor for emails with "RX" in subject
 2. **Extract Links**: Use Function node to extract job URLs from email body
 3. **HTTP Request**: Send job URLs to `/workflow/run` endpoint
 4. **Monitor Progress**: Check workflow status via API
@@ -194,12 +194,12 @@ const emailBody = $input.all()[0].json.body;
 const urlRegex = /https?:\/\/[^\s]+/g;
 const urls = emailBody.match(urlRegex);
 
-// Filter for RemotelyX URLs
-const remotelyxUrls = urls.filter(url => 
-  url.includes('remotelyx.com') || url.includes('remotelyx')
+// Filter for RX URLs
+const RXUrls = urls.filter(url => 
+  url.includes('RX.com') || url.includes('RX')
 );
 
-return { urls: remotelyxUrls };
+return { urls: RXUrls };
 ```
 
 ## 🐳 Docker Deployment
@@ -207,18 +207,18 @@ return { urls: remotelyxUrls };
 ### Build Image
 
 ```bash
-docker build -t remotelyx-dashboard .
+docker build -t RX-dashboard .
 ```
 
 ### Run Container
 
 ```bash
 docker run -d \
-  --name remotelyx-dashboard \
+  --name RX-dashboard \
   -p 8000:8000 \
   -p 8501:8501 \
   -e MONGODB_URI=mongodb://host.docker.internal:27017 \
-  remotelyx-dashboard
+  RX-dashboard
 ```
 
 ### Docker Compose
@@ -269,7 +269,7 @@ python main.py workflow --urls "https://example.com/job1" "https://example.com/j
 ## 📁 Project Structure
 
 ```
-RemotelyX-Dashboard/
+RX-Dashboard/
 ├── src/
 │   ├── api/           # FastAPI backend
 │   ├── core/          # Configuration & database
@@ -316,4 +316,4 @@ RemotelyX-Dashboard/
 - API logs: Check console output
 - Dashboard logs: Check Streamlit output
 
-**Built with ❤️ for the RemotelyX community** 
+**Built with ❤️ for the RX community** 

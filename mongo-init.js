@@ -1,6 +1,6 @@
 // MongoDB initialization script for RemotelyX Job Automation Service
 
-// Create the database and user
+// Switch to the database (creates it if it doesn't exist)
 db = db.getSiblingDB("remotelyx_jobs");
 
 // Create a user for the application
@@ -16,7 +16,9 @@ db.createUser({
 });
 
 // Create the job_postings collection
-db.createCollection("job_postings");
+if (!db.getCollectionNames().includes("job_postings")) {
+  db.createCollection("job_postings");
+}
 
 // Create indexes for better performance
 db.job_postings.createIndex({ title: 1 });
@@ -31,15 +33,14 @@ db.job_postings.createIndex({ skills: 1 });
 db.job_postings.createIndex({ seniority_level: 1 });
 db.job_postings.createIndex({ work_mode: 1 });
 
-// Insert some sample data for testing
+// Insert sample data
 db.job_postings.insertMany([
   {
     title: "Senior Software Engineer",
     company: "TechCorp Inc",
     location: "San Francisco, CA",
     job_url: "https://remotelyx.com/job/sample1",
-    description:
-      "We are looking for a senior software engineer with Python and React experience.",
+    description: "We are looking for a senior software engineer with Python and React experience.",
     skills: ["Python", "React", "JavaScript", "MongoDB"],
     tags: ["Engineering", "Full-stack", "Remote"],
     employment_type: "Full-time",
@@ -61,8 +62,7 @@ db.job_postings.insertMany([
     company: "StartupXYZ",
     location: "New York, NY",
     job_url: "https://remotelyx.com/job/sample2",
-    description:
-      "Join our team as a frontend developer working with modern web technologies.",
+    description: "Join our team as a frontend developer working with modern web technologies.",
     skills: ["JavaScript", "React", "CSS", "HTML"],
     tags: ["Frontend", "Web Development", "Startup"],
     employment_type: "Full-time",
