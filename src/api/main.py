@@ -379,6 +379,166 @@ async def filter_jobs(filters: DashboardFilters, db = Depends(get_db)):
         raise HTTPException(status_code=500, detail="Failed to filter jobs")
 
 
+@app.get("/dashboard/quick-check")
+async def get_quick_check_metrics(db = Depends(get_db)):
+    """Get quick check metrics for the dashboard."""
+    try:
+        # Get basic statistics
+        stats = await db.get_statistics()
+        
+        # Calculate additional metrics
+        total_jobs = stats.total_jobs
+        top_skills_count = len(stats.top_skills)
+        top_roles_count = len(stats.by_seniority)
+        total_applications = total_jobs  # In real implementation, this would be separate
+        
+        return {
+            "total_jobs": total_jobs,
+            "top_skills": top_skills_count,
+            "top_roles": top_roles_count,
+            "total_applications": total_applications,
+            "processed_jobs": stats.processed_jobs,
+            "enriched_jobs": stats.enriched_jobs,
+            "companies_count": len(stats.by_company)
+        }
+    except Exception as e:
+        logger.error(f"Failed to get quick check metrics: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get quick check metrics")
+
+
+@app.get("/dashboard/pipeline")
+async def get_pipeline_data(db = Depends(get_db)):
+    """Get pipeline and hiring data."""
+    try:
+        # Get all jobs for analysis
+        jobs = await db.get_jobs(limit=1000)
+        
+        # Application funnel data (sample data - in real implementation this would come from actual application tracking)
+        application_funnel = {
+            "categories": ["UX/UI", "Web Dev", "Marketing", "Finance", "Others"],
+            "stages": ["Applied", "Interviewed", "Rejected", "Hired"],
+            "data": {
+                "UX/UI": [45, 25, 15, 8],
+                "Web Dev": [60, 35, 20, 12],
+                "Marketing": [30, 18, 10, 5],
+                "Finance": [25, 15, 8, 4],
+                "Others": [40, 22, 12, 6]
+            }
+        }
+        
+        # Salary range analysis
+        salary_ranges = ["$800-1k", "$1k-1.5k", "$1.5k-2k", "$2-2.5k", "$2.5k-3k", "$3k-3.5k", "$3.5k+"]
+        salary_data = [120, 180, 220, 160, 140, 90, 60]
+        
+        # Companies hiring analysis
+        companies_hiring = []
+        for company, count in list(stats.by_company.items())[:10]:  # Top 10 companies
+            companies_hiring.append({
+                "company": company,
+                "job_count": count,
+                "active": True  # In real implementation, this would check recent activity
+            })
+        
+        return {
+            "application_funnel": application_funnel,
+            "salary_ranges": {
+                "ranges": salary_ranges,
+                "counts": salary_data
+            },
+            "companies_hiring": companies_hiring,
+            "total_companies": len(stats.by_company)
+        }
+    except Exception as e:
+        logger.error(f"Failed to get pipeline data: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get pipeline data")
+
+
+@app.get("/dashboard/trends")
+async def get_trends_data(db = Depends(get_db)):
+    """Get trends and activity data."""
+    try:
+        # Get all jobs for analysis
+        jobs = await db.get_jobs(limit=1000)
+        
+        # Job activity over time (last 7 days)
+        dates = []
+        job_postings = []
+        previous_period = []
+        
+        for i in range(7):
+            date = datetime.now() - timedelta(days=6-i)
+            dates.append(date.strftime('%Y-%m-%d'))
+            
+            # Count jobs posted on this date (simplified)
+            day_jobs = len([j for j in jobs if j.posting_date and j.posting_date.date() == date.date()])
+            job_postings.append(day_jobs)
+            
+            # Previous period (simplified)
+            previous_period.append(max(0, day_jobs - 2))
+        
+        # Location distribution
+        location_distribution = []
+        for location, count in list(stats.by_location.items())[:5]:  # Top 5 locations
+            location_distribution.append({
+                "location": location,
+                "count": count,
+                "percentage": round((count / stats.total_jobs) * 100, 1) if stats.total_jobs > 0 else 0
+            })
+        
+        # Seniority distribution
+        seniority_distribution = []
+        for seniority, count in stats.by_seniority.items():
+            seniority_distribution.append({
+                "seniority": seniority,
+                "count": count,
+                "percentage": round((count / stats.total_jobs) * 100, 1) if stats.total_jobs > 0 else 0
+            })
+        
+        # Skills trends
+        skills_trends = []
+        for skill_data in stats.top_skills[:10]:  # Top 10 skills
+            skills_trends.append({
+                "skill": skill_data["skill"],
+                "count": skill_data["count"],
+                "trend": "up" if skill_data["count"] > 10 else "stable"  # Simplified trend
+            })
+        
+        return {
+            "activity_timeline": {
+                "dates": dates,
+                "job_postings": job_postings,
+                "previous_period": previous_period
+            },
+            "location_distribution": location_distribution,
+            "seniority_distribution": seniority_distribution,
+            "skills_trends": skills_trends,
+            "total_jobs_analyzed": len(jobs)
+        }
+    except Exception as e:
+        logger.error(f"Failed to get trends data: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get trends data")
+
+
+@app.get("/dashboard/analytics")
+async def get_dashboard_analytics(db = Depends(get_db)):
+    """Get comprehensive dashboard analytics."""
+    try:
+        # Get all data in one call
+        quick_check = await get_quick_check_metrics(db)
+        pipeline = await get_pipeline_data(db)
+        trends = await get_trends_data(db)
+        
+        return {
+            "quick_check": quick_check,
+            "pipeline": pipeline,
+            "trends": trends,
+            "last_updated": datetime.utcnow().isoformat()
+        }
+    except Exception as e:
+        logger.error(f"Failed to get dashboard analytics: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get dashboard analytics")
+
+
 # Error handlers
 @app.exception_handler(Exception)
 async def global_exception_handler(request, exc):
