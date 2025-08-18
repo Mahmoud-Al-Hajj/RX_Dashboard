@@ -39,24 +39,24 @@ Export to Excel
 
 ### 1. Clone and Setup
 
-   ```bash
+```bash
 git clone <your-repo-url>
 cd RX-Dashboard
-   ```
+```
 
 ### 2. Install Dependencies
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
 ### 3. Environment Configuration
 
-   ```bash
+```bash
 # Copy environment template
 copy env.example .env
 
-   # Edit .env with your settings
+# Edit .env with your settings
 # MongoDB connection, API keys, etc.
 ```
 
@@ -72,13 +72,13 @@ sudo systemctl start mongod
 
 ### 5. Test the System
 
-   ```bash
+```bash
 # Run system tests
 python test_system.py
-   
+
 # Or use the Windows batch file
 start.bat
-   ```
+```
 
 ## 🎯 Usage
 
@@ -320,3 +320,45 @@ RX-Dashboard/
 - Dashboard logs: Check Streamlit output
 
 **Built with ❤️ for the RX community**
+
+## 🧪 Quick Demo with Dummy Data
+
+Run the stack and populate realistic sample jobs so the dashboard shows data immediately.
+
+### Using Docker (recommended)
+
+```bash
+# Build and start services
+docker-compose up -d --build
+
+# Seed 50 sample job postings into MongoDB used by the containers
+docker-compose exec dashboard bash -lc "python scripts/seed_db.py --count 50"
+
+# Open services
+# API       → http://localhost:8000/docs
+# Dashboard → http://localhost:8501
+```
+
+### Seeding from your host (alternative)
+
+If you prefer to run the seeder on your host machine, point it at the Docker MongoDB (requires auth):
+
+```bash
+# macOS/Linux
+export MONGODB_URI="mongodb://admin:password123@localhost:27017/remotelyx_jobs?authSource=admin"
+python scripts/seed_db.py --count 50
+```
+
+```powershell
+# Windows PowerShell
+$env:MONGODB_URI = "mongodb://admin:password123@localhost:27017/remotelyx_jobs?authSource=admin"
+python scripts/seed_db.py --count 50
+```
+
+Then open the dashboard at `http://localhost:8501`.
+
+### Verify data (optional)
+
+```bash
+mongosh "mongodb://admin:password123@localhost:27017/admin" --eval 'use remotelyx_jobs; db.job_postings.countDocuments()'
+```
