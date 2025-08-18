@@ -710,73 +710,7 @@ def main():
     
     # Charts Section
     col1, col2 = st.columns(2)
-    
-    with col1:
-        # Application Funnel Chart
-        st.markdown("""
-        <div class="chart-container">
-            <div class="chart-title">
-                Application Funnel
-                <select class="time-filter">
-                    <option>This Month</option>
-                </select>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        # Create application funnel data from real job data
-        if jobs:
-            # Group jobs by seniority level
-            seniority_counts = Counter([job.get('seniority', 'Unknown') for job in jobs])
-            categories = list(seniority_counts.keys())[:5] if seniority_counts else []
-            
-            if not categories:
-                st.info("No seniority data available for application funnel")
-                return
-            
-            # Create simple distribution based on seniority counts
-            application_data = {}
-            for category in categories:
-                count = seniority_counts[category]
-                # Distribute the count across stages (simplified)
-                application_data[category] = [count, count//2, count//3, count//4]
-            
-            # Create stacked bar chart
-            fig = go.Figure()
-            
-            # Use dynamic stages based on data
-            stages = ["Applied", "Interviewed", "Rejected", "Hired"]
-            colors = ["#4a90e2", "#ff6b35", "#e74c3c", "#4caf50"]
-                        
-            for i, stage in enumerate(stages):
-                fig.add_trace(go.Bar(
-                    name=stage,
-                    x=categories,
-                    y=[application_data[cat][i] for cat in categories],
-                    marker_color=colors[i]
-                ))
-            
-            fig.update_layout(
-                title="Application Funnel",
-                barmode='stack',
-                plot_bgcolor='rgba(0,0,0,0)',
-                paper_bgcolor='rgba(0,0,0,0)',
-                font=dict(color='white'),
-                height=400,
-                showlegend=True,
-                legend=dict(
-                    orientation="h",
-                    yanchor="bottom",
-                    y=1.02,
-                    xanchor="right",
-                    x=1
-                )
-            )
-            
-            st.plotly_chart(fig, use_container_width=True)
-        else:
-            st.info("No job data available for application funnel")
-    
+
     with col2:
         # Salary Range Chart
         st.markdown("""

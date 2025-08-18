@@ -736,3 +736,23 @@
 2025-08-17 20:40:06 | SUCCESS  | src.core.database:connect:51 - Successfully connected to MongoDB
 2025-08-17 20:40:06 | SUCCESS  | src.services.job_processor:initialize:35 - Job processor initialized successfully
 2025-08-17 20:40:06 | SUCCESS  | src.api.main:startup_event:60 - RemotelyX Job Automation API started successfully
+2025-08-18 09:16:33 | INFO     | __main__:main:247 - 🚀 RemotelyX Job Automation Service
+2025-08-18 09:16:33 | INFO     | __main__:main:248 - Version: 1.0.0
+2025-08-18 09:16:33 | INFO     | __main__:main:249 - Debug Mode: False
+2025-08-18 09:16:33 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-18 09:16:33 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-18 09:16:33 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-18 09:16:33 | INFO     | src.core.database:connect:32 - Connecting to MongoDB at mongodb://localhost:27017
+2025-08-18 09:16:33 | INFO     | src.core.database:_create_indexes:84 - Database indexes created successfully
+2025-08-18 09:16:33 | SUCCESS  | src.core.database:connect:51 - Successfully connected to MongoDB
+2025-08-18 09:16:33 | SUCCESS  | src.services.job_processor:initialize:35 - Job processor initialized successfully
+2025-08-18 09:16:33 | SUCCESS  | src.api.main:startup_event:60 - RemotelyX Job Automation API started successfully
+2025-08-18 09:16:45 | INFO     | __main__:main:247 - 🚀 RemotelyX Job Automation Service
+2025-08-18 09:16:45 | INFO     | __main__:main:248 - Version: 1.0.0
+2025-08-18 09:16:45 | INFO     | __main__:main:249 - Debug Mode: False
+2025-08-18 09:16:45 | INFO     | __main__:run_dashboard:72 - Starting RemotelyX Job Intel Dashboard
+2025-08-18 09:16:45 | INFO     | __main__:run_dashboard:73 - Dashboard will be available at: http://localhost:8501
+2025-08-18 09:25:33 | ERROR    | src.api.main:global_exception_handler:546 - Unhandled exception: Unable to serialize unknown type: <class 'method'>
+2025-08-18 10:27:29 | INFO     | src.core.database:disconnect:66 - Disconnected from MongoDB
+2025-08-18 10:27:29 | INFO     | src.services.job_processor:cleanup:301 - Job processor cleanup completed
+2025-08-18 10:27:29 | INFO     | src.api.main:shutdown_event:72 - RemotelyX Job Automation API shutdown completed
