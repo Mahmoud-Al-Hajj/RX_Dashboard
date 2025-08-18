@@ -23,3 +23,42 @@
 2025-08-18 07:26:42 | SUCCESS  | src.core.database:connect:51 - Successfully connected to MongoDB
 2025-08-18 07:26:42 | SUCCESS  | src.services.job_processor:initialize:35 - Job processor initialized successfully
 2025-08-18 07:26:42 | SUCCESS  | src.api.main:startup_event:60 - RemotelyX Job Automation API started successfully
+2025-08-18 08:02:42 | INFO     | __main__:main:247 - 🚀 RemotelyX Job Automation Service
+2025-08-18 08:02:42 | INFO     | __main__:main:248 - Version: 1.0.0
+2025-08-18 08:02:42 | INFO     | __main__:main:249 - Debug Mode: False
+2025-08-18 08:02:44 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-18 08:02:44 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-18 08:02:44 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-18 08:02:44 | INFO     | src.core.database:connect:32 - Connecting to MongoDB at mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
+2025-08-18 08:02:49 | INFO     | src.core.database:_create_indexes:84 - Database indexes created successfully
+2025-08-18 08:02:49 | SUCCESS  | src.core.database:connect:51 - Successfully connected to MongoDB
+2025-08-18 08:02:49 | SUCCESS  | src.services.job_processor:initialize:35 - Job processor initialized successfully
+2025-08-18 08:02:49 | SUCCESS  | src.api.main:startup_event:60 - RemotelyX Job Automation API started successfully
+2025-08-18 08:03:06 | INFO     | src.core.database:disconnect:66 - Disconnected from MongoDB
+2025-08-18 08:03:06 | INFO     | src.services.job_processor:cleanup:301 - Job processor cleanup completed
+2025-08-18 08:03:06 | INFO     | src.api.main:shutdown_event:72 - RemotelyX Job Automation API shutdown completed
+2025-08-18 08:03:15 | INFO     | __main__:main:247 - 🚀 RemotelyX Job Automation Service
+2025-08-18 08:03:15 | INFO     | __main__:main:248 - Version: 1.0.0
+2025-08-18 08:03:15 | INFO     | __main__:main:249 - Debug Mode: False
+2025-08-18 08:03:18 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-18 08:03:18 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-18 08:03:18 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-18 08:03:18 | INFO     | src.core.database:connect:32 - Connecting to MongoDB at mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
+2025-08-18 08:03:18 | INFO     | src.core.database:_create_indexes:84 - Database indexes created successfully
+2025-08-18 08:03:18 | SUCCESS  | src.core.database:connect:51 - Successfully connected to MongoDB
+2025-08-18 08:03:18 | SUCCESS  | src.services.job_processor:initialize:35 - Job processor initialized successfully
+2025-08-18 08:03:18 | SUCCESS  | src.api.main:startup_event:60 - RemotelyX Job Automation API started successfully
+2025-08-18 08:08:20 | INFO     | src.core.database:disconnect:66 - Disconnected from MongoDB
+2025-08-18 08:08:20 | INFO     | src.services.job_processor:cleanup:301 - Job processor cleanup completed
+2025-08-18 08:08:20 | INFO     | src.api.main:shutdown_event:72 - RemotelyX Job Automation API shutdown completed
+2025-08-18 08:09:22 | INFO     | __main__:main:247 - 🚀 RemotelyX Job Automation Service
+2025-08-18 08:09:22 | INFO     | __main__:main:248 - Version: 1.0.0
+2025-08-18 08:09:22 | INFO     | __main__:main:249 - Debug Mode: False
+2025-08-18 08:09:24 | INFO     | __main__:run_api_server:51 - Starting RemotelyX Job Automation API Server
+2025-08-18 08:09:24 | INFO     | __main__:run_api_server:52 - Server will be available at: http://0.0.0.0:8000
+2025-08-18 08:09:24 | INFO     | __main__:run_api_server:53 - API documentation at: http://0.0.0.0:8000/docs
+2025-08-18 08:09:24 | INFO     | src.core.database:connect:32 - Connecting to MongoDB at mongodb://admin:password123@mongodb:27017/remotelyx_jobs?authSource=admin
+2025-08-18 08:09:24 | INFO     | src.core.database:_create_indexes:84 - Database indexes created successfully
+2025-08-18 08:09:24 | SUCCESS  | src.core.database:connect:51 - Successfully connected to MongoDB
+2025-08-18 08:09:24 | SUCCESS  | src.services.job_processor:initialize:35 - Job processor initialized successfully
+2025-08-18 08:09:24 | SUCCESS  | src.api.main:startup_event:60 - RemotelyX Job Automation API started successfully
